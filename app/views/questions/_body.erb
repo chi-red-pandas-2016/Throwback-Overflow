@@ -2,12 +2,7 @@
 <article>
   <h2><%= question.title%></h2>
     <p><%= question.body_text%></p>
-  <div class="voting">
-    <form action="" method="POST">
-      <input name="upvote" type="submit" value="+1">
-      <input name="downvote" type="submit" value="-1">
-    </form>
-  </div>
+    <%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{question.id}/votes"}, layout: false %>
 </article>
 
 
