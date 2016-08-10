@@ -3,6 +3,7 @@
   <h2><%= question.title%></h2>
     <p><%= question.body_text%></p>
     <%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{question.id}/votes"}, layout: false %>
+    <%= erb :'comments/_comment_form', locals: {comment_route: "/questions/#{question.id}/comments"}, layout: false %>
 </article>
 
 
