@@ -1,8 +1,3 @@
-Add your ActiveRecord models here.
-
-You can create them by being in the application root directory and running:
-
-`rake generate:model NAME=User`
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, http://code.google.com/p/wwwsqldesigner/ -->
 <!-- Active URL: http://schemadesigner.devbootcamp.com/ -->
