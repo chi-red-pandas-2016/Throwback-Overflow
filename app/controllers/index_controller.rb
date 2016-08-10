@@ -1,36 +1,51 @@
+before '*' do
+  @errors = []
+end
+
 get '/' do
   erb :index
 end
 
-get '/user' do
-  erb :'user/show'
+get '/users' do
+  erb :'users/show'
 end
 
-get '/user/new' do
-  erb :'user/new' #show new user view
+get '/users/new' do
+  erb :'users/new' #show new user view
 end
 
-post '/user' do
-
-  #below works with properly formatted params in HTML form
-  @user = User.new(email: params[:email], hashed_password: params[:hashed_password]) #create new user
-
-  if @user.save #saves new user or returns false if unsuccessful
-    redirect '/user' #redirect back to user index page
+post '/users' do
+  user = User.new(email: params[:email])
+  user.password = params[:password]
+  if user.save
+    session[:user_id] = user.id
+    redirect '/users'
   else
-    erb :'user/new' # show new user view again(potentially displaying errors)
+    erb :'users/new'
   end
 end
 
-get '/user/login' do
-  erb :'user/login'
-
-end
-get '/user/:id' do
-
-  erb :'user/show' #show single user view
-
+get '/users/login' do
+  erb :'users/login'
 end
 
+post '/users/login' do
+  user = User.authenticate(params[:email], params[:password])
+  if user
+    session[:user_id] = user.id
+    erb :'users/show'
+  else
+    @errors << "Unable to log in."
+    erb :'/users/login'
+  end
+end
 
+get '/users/:id' do
+  erb :'users/show' #show single user view
+end
 
+post '/users/logout' do
+  puts "i'm logging out!"
+  session[:user_id] = nil
+  redirect to "/"
+end

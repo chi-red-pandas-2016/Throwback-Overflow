@@ -1,7 +1,3 @@
-before '*' do
-  @errors = []
-end
-
 get '/questions/new' do
   erb :'questions/new'
 end
