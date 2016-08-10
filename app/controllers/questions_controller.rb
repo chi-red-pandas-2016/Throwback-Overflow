@@ -1,6 +1,3 @@
-before '*' do
-  @errors = []
-end
 
 get '/questions' do
   @questions = Question.all
