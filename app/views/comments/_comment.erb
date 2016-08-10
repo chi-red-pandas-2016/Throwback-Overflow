@@ -1,0 +1,12 @@
+<!-- This is not done yet! -->
+<% comments.each do |comment| %>
+  <p>Comment:</p>
+  <p><%= comment.text %></p>
+  <% type = comment.commentable_type %>
+  <% if type == "Question" %>
+    <% route = "/questions/#{question.id}/votes"%>
+  <% elsif type == "Answer" %>
+    <% route = "/questions/:question_id/answers/:answer_id/comments"%>
+  <% end %>
+  <%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{question.id}/votes"}, layout: false %>
+<% end %>
