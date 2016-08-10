@@ -4,9 +4,12 @@
   <p><%= comment.text %></p>
   <% type = comment.commentable_type %>
   <% if type == "Question" %>
-    <% route = "/questions/#{question.id}/votes"%>
+    <% id = comment.commentable_id %>
+    <% route = "/questions/#{id}/votes"%>
   <% elsif type == "Answer" %>
-    <% route = "/questions/:question_id/answers/:answer_id/comments"%>
+    <% answer_id = comment.commentable_id %>
+    <!-- THIS NEEDS TO BE REFACTORED!!!!! -->
+    <% route = "/questions/3/answers/#{answer_id}/comments"%>
   <% end %>
-  <%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{question.id}/votes"}, layout: false %>
+  <%= erb :'votes/_vote_form', locals: {vote_route: route}, layout: false %>
 <% end %>
