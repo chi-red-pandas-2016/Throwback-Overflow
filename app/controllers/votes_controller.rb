@@ -1,4 +1,3 @@
-
 post '/questions/:id/votes' do
 
   Question.find(params[:id]).votes.create(user_id: current_user.id, value: value)
