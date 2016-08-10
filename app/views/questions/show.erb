@@ -1,2 +1,10 @@
-
-<%= erb :'questions/_body', locals: {question: @question}, layout: false %>
+<main>
+  <%= erb :'questions/_body', locals: {question: @question}, layout: false %>
+  <h4>Answers</h4>
+  <% @question.answers.each do |answer| %>
+      <%= erb :'answers/_show', locals: {answer: answer}, layout: false %>
+  <% end %>
+  <% if logged_in? %>
+    <%= erb :'answers/_new', locals: {question: @question}, layout: false %>
+  <% end %>
+</main>

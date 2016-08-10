@@ -1,0 +1,14 @@
+<ul id="comments-list">
+  <li><%= answer.text %></li>
+  <% if logged_in? && current_user.id == answer.user_id %>
+<!--   <form action="/questions/<%= answer.question_id %>/answers/<%= answer.id %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="submit" value="Delete this answer">
+  </form>  -->
+
+    <form action="/questions/<%= answer.question_id %>/answers/<%= answer.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete this answer">
+    </form>
+  <% end %>
+</ul>
