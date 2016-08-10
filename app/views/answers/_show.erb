@@ -1,0 +1,16 @@
+<ul id="answers-list">
+  <li><%= answer.text %></li>
+  <% if logged_in? && current_user.id == answer.user_id %>
+<!--   <form action="/questions/<%= answer.question_id %>/answers/<%= answer.id %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="submit" value="Delete this answer">
+  </form>  -->
+
+    <form action="/questions/<%= answer.question_id %>/answers/<%= answer.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete this answer">
+    </form>
+  <% end %>
+  <%= erb :'votes/_vote_form', locals: {vote_route: "questions/#{answer.question_id}/answers/#{answer.id}/votes"}, layout: false %>
+  <%= erb :'comments/_comment_form', locals: {comment_route: "questions/#{answer.question_id}/answers/#{answer.id}/comments"}, layout: false %>
+</ul>
