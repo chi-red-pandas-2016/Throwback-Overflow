@@ -8,4 +8,5 @@ class QuestionImage < ActiveRecord::Base
       self.filepath = "https://i.ytimg.com/vi/-p3lKBJ-kA4/maxresdefault.jpg"
     end
   end
+
 end

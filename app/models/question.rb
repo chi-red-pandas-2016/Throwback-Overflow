@@ -1,5 +1,7 @@
 class Question < ActiveRecord::Base
   # Remember to create a migration!
+  before_save :update_filepath
+
   belongs_to :user
   has_many :answers
 
@@ -11,6 +13,12 @@ class Question < ActiveRecord::Base
 
   def vote_total
     Vote.where(voteable_type: "Question", voteable_id: self.id).sum(:value)
+  end
+
+  def update_filepath
+    if self.img_path == ""
+      self.img_path = "https://i.ytimg.com/vi/-p3lKBJ-kA4/maxresdefault.jpg"
+    end
   end
 
 end
