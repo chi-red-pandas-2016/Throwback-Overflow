@@ -4,9 +4,11 @@
     <p><%= question.body_text%></p>
     <%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{question.id}/votes"}, layout: false %>
     <%= erb :'comments/_comment_form', locals: {comment_route: "/questions/#{question.id}/comments"}, layout: false %>
-    <section>
-    <%= erb :'comments/_comment', locals: {comments: question.comments}, layout: false %>
-    </section>
+    <div class="question-comments-list">
+      <% question.comments.each do |comment| %>
+        <%= erb :'comments/_comment', locals: {comment: comment}, layout: false %>
+      <% end %>
+    </div>
 </article>
 
 
