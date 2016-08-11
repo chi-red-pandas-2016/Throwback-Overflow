@@ -18,5 +18,5 @@ $(document).ready(function() {
       $form[0].reset();
       $('#answers-list').prepend(response);
     });// close AJAX request
-  }); // close answer form selector
+  }); // END OF ANSWER AJAX
 });// close on ready
