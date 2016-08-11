@@ -1,4 +1,6 @@
 <h1>I show all the questions!!!</h1>
-<% @questions.each do |quest| %>
-  <%= erb :'questions/_list', locals: {question: quest}, layout: false %>
-<% end %>
+<div class='question_wrapper'>
+  <% @questions.each do |quest| %>
+    <%= erb :'questions/_list', locals: {question: quest}, layout: false %>
+  <% end %>
+</div>
