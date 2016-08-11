@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  $('.question_form').on("submit", function(event) {
+// Start of Question AJAX
+  $('.question-form').on("submit", function(event) {
     event.preventDefault();
 
     var form_data = $(this).serialize()
@@ -7,17 +8,14 @@ $(document).ready(function() {
     $.ajax({
       url: $(this).attr('action'),
       type: $(this).attr('method'),
-      data: form_data,
+      data: form_data
     })
-    .done(function() {
-      ;
+    .done(function(response) {
+      $(".question-wrapper").prepend(response);
     })
     .fail(function() {
       console.log("error");
-    })
-    .always(function() {
-      console.log("complete");
     });
-
   });
+// End of Question AJAX
 });
