@@ -3,7 +3,7 @@ before '*' do
 end
 
 get '/' do
-  erb :index
+  redirect '/questions'
 end
 
 get '/users' do
