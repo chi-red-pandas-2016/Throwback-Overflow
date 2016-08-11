@@ -1,7 +1,6 @@
 .container {
-  width: 90%;
+  width: 80%;
   margin: auto;
-
 }
 /*.container {
    padding: 0;
@@ -19,14 +18,9 @@
 }
 */
  main#list {
-  background-color: goldenrod;
-  padding:auto;
+  /*background-color: goldenrod;*/
+  /*padding:auto;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
- }
-
-.question {
-
-
  }

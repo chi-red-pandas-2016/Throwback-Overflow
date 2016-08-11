@@ -74,5 +74,15 @@ $(document).ready(function() {
     }); // close AJAX request
   }); // END OF COMMENTS AJAX
 
+//START SLIDING DOWN NEW QUESTION FORM
+
+  $(".question-form-wrapper").hide();
+
+  $(".add-a-throwback").on("click", function() {
+    $(".question-form-wrapper").slideToggle();
+  });
+
+//END SLIDING DOWN NEW QUESTION FORM
+
 });// close on ready
 

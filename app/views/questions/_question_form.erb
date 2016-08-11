@@ -1,10 +1,9 @@
-<form class='question-form' action="/questions" method="POST">
-  <fieldset>
-  <label for="title">Title:</label>
-  <input name="question[title]" type="text" placeholder="Title for your question">
-  <textarea name="question[body_text]" placeholder="Your favorite throwback!"></textarea>
-  <label for="image">Add an image:</label>
-  <input name="question[img_path]" type="text">
-  <input type="submit" value="Throw it back!">
-  </fieldset>
-</form>
+<div class="question-form-wrapper">
+  <form class='question-form' action="/questions" method="POST">
+    <input name="question[title]" type="text" placeholder="Title"><br>
+    <textarea name="question[body_text]" placeholder="Body"></textarea><br>
+    <label for="image">Add an image:</label><br>
+    <input name="question[img_path]" type="text"><br>
+    <input type="submit" value="Throw it back!">
+  </form>
+</div>

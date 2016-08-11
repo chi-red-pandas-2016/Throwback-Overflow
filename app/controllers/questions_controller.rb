@@ -20,7 +20,7 @@ post '/questions' do
   question.user_id = current_user.id
   if question.save
     if request.xhr?
-      erb(:'questions/_body', layout: false, locals: {question: question})
+      erb(:'questions/_list', layout: false, locals: {question: question})
     else
       redirect "/questions/#{question.id}"
     end
