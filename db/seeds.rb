@@ -1,6 +1,8 @@
+###################### USERS ######################
+
 User.create(
-  email: 'root@',
-  hashed_password: "root")
+  email: 'demo@',
+  hashed_password: "password")
 
 User.create(
   email: 'will.smith@90.com',
@@ -42,16 +44,17 @@ User.create(
   email: 'marilyn.monroe@50.com',
   hashed_password: "password")
 
-<<<<<<< HEAD
-
 users = User.all
 
+############################################################
+
+####################### QUESTIONS ##########################
 
 question = Question.create(
-  title: "Which 1900's decade was the BEST 90's, 80's, 70's, 60's?!!?!",
-  body_text: "I think the 90's was the best because it just totally was!",
+  title: "Which 1900's decade was the BEST?: 70's, 80's, 90's, or some other one?",
+  body_text: "I think the 90's was the best because it just totally was! What do y'all think?",
   user_id: 2,
-  img_path: "https://pbs.twimg.com/profile_images/508349190372478976/4p6IuWR6.png"
+  img_path: "https://lh3.googleusercontent.com/JVQtZTDeV06rO7ChqMIF7thcczCe2m2sB-jjx-w0zlmUXNGdvBWqEfIqxL-x72WB_w=w300"
   )
 question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
 
@@ -65,20 +68,128 @@ question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
 
 question = Question.create(
   title: "What time should I stop feeding my Gremlin?",
-  body_text: "My stupid furby turns into a gremlin if I feed him too late. PLEASE HELP!",
+  body_text: "My stupid furby turns into a gremlin if I feed him too late. PLEASE HELP ME!!!",
   user_id: 4,
   img_path: "http://nme.assets.ipccdn.co.uk/images/2015Gremlins_GettyImages-163067748261115.article_x4.jpg"
   )
 question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
 
+question = Question.create(
+  title: "What the FUCK are these things?!!",
+  body_text: "What are these things?!?!?!?!",
+  user_id: 11,
+  img_path: "https://nerdinthecity.files.wordpress.com/2015/11/wpid-screenshot_2015-11-02-06-59-09-1.png"
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+question = Question.create(
+  title: "This show is sooo RAD!!!",
+  body_text: "The answer is yes.",
+  user_id: 5,
+  img_path: "http://vignette3.wikia.nocookie.net/miamivice/images/1/15/Vicelogo.jpg/revision/latest?cb=20110901122221"
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+question = Question.create(
+  title: "Does anyone else miss 'Happy Days' aka the 50's?",
+  body_text: "... cause I do",
+  user_id: 10,
+  img_path: "http://imgsrv.legends1027.com/image/wlgz/UserFiles/Image/Wiki%20Corner/happy-Days.png"
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+question = Question.create(
+  title: "Beatles reunion tour!!!",
+  body_text: "PLEASE?!",
+  user_id: 7,
+  img_path: "http://i.dailymail.co.uk/i/pix/2013/02/05/article-0-175DCBE1000005DC-162_634x411.jpg"
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+question = Question.create(
+  title: "Should we bring back 70's disco?",
+  body_text: "Nope.",
+  user_id: 9,
+  img_path: "http://photos2.meetupstatic.com/photos/event/9/3/3/c/600_343537692.jpeg"
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+question = Question.create(
+  title: "I don't know what to talk about.",
+  body_text: "Nope.",
+  user_id: 5,
+  img_path: ""
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+question = Question.create(
+  title: "Default Images be like ERRRMAAGHHH!!!",
+  body_text: "Nope.",
+  user_id: 1,
+  img_path: ""
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+##################################################
+
+######### Randomly Generated Questions ###########
+
+100.times do
+question = Question.create(
+  title: Faker::Hacker.say_something_smart,
+  body_text: Faker::Hacker.say_something_smart,
+  user_id: users.sample.id,
+  img_path: ""
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+end
+
 questions = Question.all
 
+##################################################
+
+################### ANSWERS ######################
+
 answer = Answer.create(
-    text: Faker::Hacker.say_something_smart,
-    user_id: users.sample.id,
-    question_id: questions.sample.id
+    text: "NO!!! The 80's were way better.",
+    user_id: 4,
+    question_id: 1
     )
 
   answer.votes.create(user_id: users.sample.id, value: [-1,1].sample)
 
-  answer.comments.create(user_id: users.sample.id, text: Faker::Lorem.sentence)
+  answer.comments.create(user_id: users.sample.id, text: "I strongly disagree duuuude.")
+
+  answer = Answer.create(
+    text: "Everybody love everybody! The 70's were far out.",
+    user_id: 7,
+    question_id: 1
+    )
+
+  answer.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+  answer.comments.create(user_id: users.sample.id, text: "What does that even mean???")
+
+  answer = Answer.create(
+    text: "Never feed your Gremlin past midnight you idiot! Otherwise, they will turn evil and scary!!!",
+    user_id: 5,
+    question_id: 3
+    )
+
+  answer.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+    answer = Answer.create(
+    text: "They are called trolls",
+    user_id: 8,
+    question_id: 4
+    )
+
+  answer.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+  answer = Answer.create(
+    text: "They are just naked hippies without jobs!",
+    user_id: 8,
+    question_id: 4
+    )
+
+  answer.votes.create(user_id: users.sample.id, value: [-1,1].sample)
