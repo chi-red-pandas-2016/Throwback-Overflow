@@ -30,6 +30,7 @@
 </nav>
 </header>
 <main id="content" class="container">
+  <%= erb :_error, locals: {errors: @errors} %>
   <%= yield %>
 </main>
 </body>
