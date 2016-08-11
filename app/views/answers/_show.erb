@@ -1,5 +1,11 @@
 <ul id="answers-list">
   <li><%= answer.text %></li>
+  <% if logged_in? && current_user.id == answer.question.user_id %>
+  <form action="<%= "/questions/#{answer.question_id}/answers/#{answer.id}" %>" method="POST">
+    <input type="hidden" name="_method" value="put">
+    <input type="submit" value="Mark as BEST">
+  </form>
+  <% end %>
   <% if logged_in? && current_user.id == answer.user_id %>
 <!--   <form action="/questions/<%= answer.question_id %>/answers/<%= answer.id %>" method="POST">
     <input type="hidden" name="_method" value="PUT">
