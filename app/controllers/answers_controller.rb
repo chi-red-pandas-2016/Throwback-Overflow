@@ -25,3 +25,20 @@ delete '/questions/:question_id/answers/:id' do
   end
     redirect "/questions/#{params[:question_id]}"
 end
+
+
+put '/questions/:question_id/answers/:id' do
+  @question = Question.find(params[:question_id])
+  @answer = Answer.find(params[:id])
+
+  if @question.user_id == current_user.id
+    @question.answers.each do |answer|
+      answer.update_attribute(:best, false)
+    end
+    puts @answer.text
+    @answer.update_attribute(:best, true)
+    puts @answer.best
+  end
+
+  erb :'questions/show'
+end

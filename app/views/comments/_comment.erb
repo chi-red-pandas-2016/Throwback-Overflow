@@ -2,14 +2,6 @@
 <% comments.each do |comment| %>
   <p>Comment:</p>
   <p><%= comment.text %></p>
-  <% type = comment.commentable_type %>
-  <% if type == "Question" %>
-    <% id = comment.commentable_id %>
-    <% route = "/questions/#{id}/comments/#{comment.id}/votes"%>
-  <% elsif type == "Answer" %>
-    <% answer_id = comment.commentable_id %>
-    <!-- THIS NEEDS TO BE REFACTORED!!!!! -->
-    <% route = "/questions/3/answers/#{answer_id}/comments/#{comment.id}/votes"%>
-  <% end %>
-  <%= erb :'votes/_vote_form', locals: {vote_route: route}, layout: false %>
+  <p>Vote Total: <%= comment.vote_total %></p>
+  <%= erb :'votes/_vote_form', locals: {vote_route: vote_route(comment)}, layout: false %>
 <% end %>
