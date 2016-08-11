@@ -7,6 +7,8 @@ get '/' do
 end
 
 get '/users' do
+  @user = current_user
+  @usr_questions = @user.questions
   erb :'users/show'
 end
 
@@ -33,7 +35,7 @@ post '/users/login' do
   user = User.authenticate(params[:email], params[:password])
   if user
     session[:user_id] = user.id
-    erb :'users/show'
+    redirect :'/users'
   else
     @errors << "Unable to log in."
     erb :'/users/login'
