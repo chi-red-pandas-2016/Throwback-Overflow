@@ -1,6 +1,11 @@
 post '/questions/:id/votes' do
 
-  Question.find(params[:id]).votes.create(user_id: current_user.id, value: params[:vote].to_i)
+  puts "i'm in /questions/:id/votes"
+  puts "#{params[:id]}, user_id: #{current_user.id}, value: #{params[:vote].to_i}"
+
+  question = Question.find(params[:id])
+
+  question.votes.create(user_id: current_user.id, value: params[:vote].to_i)
 
   redirect back
 end
