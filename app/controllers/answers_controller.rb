@@ -3,9 +3,13 @@ get '/questions/:question_id/answers/new' do
 end
 
 post '/questions/:question_id/answers' do
-  @question = Question.find(params[:question_id])
-  @question.answers.create(text: params[:text], user_id: current_user.id)
-  redirect "/questions/#{@question.id}"
+  question = Question.find(params[:question_id])
+  answer = question.answers.create(text: params[:text], user_id: current_user.id)
+  if request.xhr?
+    erb :'answers/_show', layout: false, locals: {answer: answer}
+  else
+    redirect "/questions/#{question.id}"
+  end
 end
 
 # Update a answer
