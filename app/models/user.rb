@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :comments
 
   validates :email, uniqueness: true, presence: true
+  validates_format_of :email, :with => /@/
   validates :hashed_password, presence: true
 
   def password
