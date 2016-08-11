@@ -11,7 +11,6 @@ end
 # Show a question
 get '/questions/:id' do
   @question = Question.find(params[:id])
-
   erb :'questions/show'
 end
 
@@ -21,7 +20,7 @@ post '/questions' do
   question = Question.new(params[:question])
   question.user_id = current_user.id
   if question.save
-    redirect "/questions/#{question.id}"
+   redirect "/questions/#{question.id}"
   else
     @errors = questions.errors.full_messages
     erb :'questions/new'
