@@ -8,4 +8,9 @@ class Question < ActiveRecord::Base
 
   validates :title, presence: true
   validates :body_text, presence: true
+
+  def vote_total
+    Vote.where(voteable_type: "Question", voteable_id: self.id).sum(:value)
+  end
+
 end
