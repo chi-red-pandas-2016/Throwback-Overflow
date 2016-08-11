@@ -1,4 +1,7 @@
-<h1>I show all the questions!!!</h1>
+<!-- HOME PAGE -->
+<!--I SHOW ALL THE QUESTIONS -->
+<main id="questions">
 <% @questions.each do |quest| %>
   <%= erb :'questions/_list', locals: {question: quest}, layout: false %>
 <% end %>
+</main>
