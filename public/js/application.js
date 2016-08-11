@@ -4,4 +4,19 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-});
+  // THIS IS THE AJAX FOR ANSWERS
+  $('form#answer-form').on('submit', function( event ){
+    event.preventDefault();
+    var $form = $(this);
+    var answerData = $form.serialize();
+
+    $.ajax({
+      method: $form.attr('method'),
+      url: $form.attr('action'),
+      data: answerData
+    }).done( function(response){
+      $form[0].reset();
+      $('#answers-list').prepend(response);
+    });// close AJAX request
+  }); // close answer form selector
+});// close on ready

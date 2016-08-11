@@ -13,6 +13,7 @@ users = User.all
   question = Question.create(
     title: Faker::Hacker.noun,
     body_text: Faker::Hacker.say_something_smart,
+    img_path: ""
     user_id: users.sample.id
     )
   question.votes.create(user_id: users.sample.id, value: [-1,1].sample)

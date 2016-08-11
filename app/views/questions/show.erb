@@ -1,11 +1,12 @@
 <main>
   <%= erb :'questions/_body', locals: {question: @question, image: @image}, layout: false %>
-  <h4>Answers</h4>
-  <% if logged_in? %>
-    <%= erb :'answers/_new', locals: {question: @question}, layout: false %>
-  <% end %>
-  <% @question.answers.each do |answer| %>
-      <%= erb :'answers/_show', locals: {answer: answer}, layout: false %>
-  <% end %>
-
+  <div class="answers-wrapper">
+    <h4>Answers</h4>
+      <% if logged_in? %>
+        <%= erb :'answers/_new', locals: {question: @question}, layout: false %>
+      <% end %>
+      <% @question.answers.each do |answer| %>
+          <%= erb :'answers/_show', locals: {answer: answer}, layout: false %>
+      <% end %>
+  </div>
 </main>
