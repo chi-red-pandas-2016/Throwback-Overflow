@@ -7,19 +7,20 @@ header#main-header {
   height: 100px;
   margin-bottom: 20px;
 
-
 }
 
-h1#main-headline {
+ header h1#main-headline {
+  display: inline;
   font-family: Orbitron;
   font-size: 4em;
   font-weight: bold;
-  margin-left: 35px;
-  vertical-align: bottom;
+  margin: 150px 0 0 20px !important;
+  width: 60%;
 }
 
 nav {
   margin: 0 100px 0 0;
+  display: inline-block;
 }
 
 nav ul {
@@ -37,40 +38,73 @@ nav ul li a {
 }
 
 #content {
-  clear: both;
-  margin-top: 0px;
-  margin: auto;
   background-color: #f6e4d6;
-  width: 90%;
 }
 
-main#questions {
-  margin: auto;
-
-}
 
 ul#question-list {
   display: inline-block;
-  width: 25%;
+  /*width: 25%;*/
   margin: 0;
 
 }
 
-ul#question-list:nth-child(4n) {
-  clear:right;
-  float: left;
+div.question {
+  height: 200px;
+  width: 400px;
+  border: 1px solid black;
+  margin: 0;
+  display: inline-block;
 
 }
 
-ul#question-list li {
-
+div#voting {
+  border: 1px solid black;
+  height: 150px;
+  width: 50%;
 
 }
 
-/*
-rgb(0,141,143) blue
-rgb(255,1,12) red
-#ffd653 yellow
-#21b0ae light blue
-#f6e4d6 off white
-#ff2f8a light pink*/
+/*****COMMENTS******/
+
+.comments {
+  margin-top: 10px;
+  margin-left: 20px;
+
+}
+.comments h5 {
+  display: inline;
+}
+
+.comment-text {
+  display: inline;
+
+}
+
+
+.answers {
+  background-color: rgba(255,214,83, 0.8);
+}
+ul#answers-list {
+  background-color: rgba(50,50,50,0.5);
+}
+
+/******VOTES****/
+div.voting form {
+  display: inline-block;
+
+}
+#vote-total {
+  /*float: left;*/
+  display: inline;
+  width: 200px;
+  margin: 0;
+
+}
+#upvote {
+  background-color: rgba(0,120, 0, 0.7);
+}
+
+#downvote {
+  background-color: rgba(120,0,0,0.7);
+}

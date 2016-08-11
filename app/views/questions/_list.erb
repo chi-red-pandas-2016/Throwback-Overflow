@@ -1,6 +1,7 @@
-
-<ul id="question-list">
-  <li><a href="/questions/<%=question.id%>"><%= question.title%></a></li>
+<div class="question">
+<ul>
+  <img src="<%= question.img_path %>" width="250">
+  <h4><a href="/questions/<%=question.id%>"><%= question.title%></a></h4>
 </ul>
 
-<!-- vote.comment -->
+</div>

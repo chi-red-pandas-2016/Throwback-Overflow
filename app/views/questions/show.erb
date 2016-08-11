@@ -1,5 +1,6 @@
 <main>
-  <%= erb :'questions/_body', locals: {question: @question}, layout: false %>
+  <%= erb :'questions/_body', locals: {question: @question, image: @image}, layout: false %>
+  <div class="answers">
   <h4>Answers</h4>
   <% if logged_in? %>
     <%= erb :'answers/_new', locals: {question: @question}, layout: false %>
@@ -7,5 +8,5 @@
   <% @question.answers.each do |answer| %>
       <%= erb :'answers/_show', locals: {answer: answer}, layout: false %>
   <% end %>
-
+</div>
 </main>
