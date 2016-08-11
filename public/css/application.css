@@ -1,4 +1,8 @@
 @font-face {
     font-family: 'Retro';
-    src: url('../fonts/retro.ttf');
+    src: url('/fonts/retro.ttf') format('truetype');
+}
+
+h1 {
+  font-family: Retro;
 }

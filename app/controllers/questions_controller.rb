@@ -19,7 +19,11 @@ post '/questions' do
   question = Question.new(params[:question])
   question.user_id = current_user.id
   if question.save
-   redirect "/questions/#{question.id}"
+    if request.xhr?
+      erb(:'questions/_body', layout: false, locals: {question: question})
+    else
+      redirect "/questions/#{question.id}"
+    end
   else
     @errors = questions.errors.full_messages
     erb :'questions/new'
