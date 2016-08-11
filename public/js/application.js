@@ -54,6 +54,25 @@ $(document).ready(function() {
 // END OF AJAX FOR VOTING
 
 
+  // AJAX FOR COMMENTS
+  $('form#comment-form').on('submit', function( event ){
+    event.preventDefault();
+    var $form = $(this);
+    var commentData = $form.serialize();
+    $.ajax({
+      method: $form.attr('method'),
+      url: $form.attr('action'),
+      data: commentData
+    }).done( function(response){
+      $form[0].reset();
+      var route = $form.attr('action');
+      if (route.includes("answers")){
+        $('.answer-comments-list').prepend(response);
+      } else {
+        $('.question-comments-list').prepend(response);
+      }
+    }); // close AJAX request
+  }); // END OF COMMENTS AJAX
 
 });// close on ready
 

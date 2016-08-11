@@ -1,6 +1,6 @@
-<!-- This is not done yet! -->
-<% comments.each do |comment| %>
+<div class="comments-wrapper">
   <p>Comment:</p>
   <p><%= comment.text %></p>
   <%= erb :'votes/_vote_form', locals: {vote_route: vote_route(comment), voteable: comment}, layout: false %>
-<% end %>
+</div>
+
