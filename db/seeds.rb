@@ -42,6 +42,7 @@ User.create(
   email: 'marilyn.monroe@50.com',
   hashed_password: "password")
 
+<<<<<<< HEAD
 
 users = User.all
 

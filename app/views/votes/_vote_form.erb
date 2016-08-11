@@ -1,11 +1,16 @@
 <div class="voting">
+  <!-- <form action="<%= vote_route %>" method="POST">
+    <input id="upvote" name="vote" type="submit" value="+1">
+    <input id="downvote" name="vote" type="submit" value="-1">
+
+  </form> -->
   <form class="vote-form" action="<%= vote_route %>" method="POST">
     <input type="hidden" name="vote" value="+1">
-    <input type="submit" value="+1">
+    <input type="submit" id="upvote"value="+1">
   </form>
   <form class="vote-form" action="<%= vote_route %>" method="POST">
     <input type="hidden" name="vote" value="-1">
-    <input type="submit" value="-1">
+    <input type="submit" id="downvote"value="-1">
   </form>
   <span class='vote-count'>VoteCount:<%= voteable.vote_total %></span>
 </div>
