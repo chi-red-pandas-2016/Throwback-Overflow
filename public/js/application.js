@@ -1,5 +1,6 @@
 $(document).ready(function() {
-// Start of Question AJAX
+
+// THIS IS THE AJAX FOR QUESTIONS
   $('.question-form').on("submit", function(event) {
     event.preventDefault();
 
@@ -17,12 +18,9 @@ $(document).ready(function() {
       console.log("error");
     });
   });
-// End of Question AJAX
+// END OF QUESTION AJAX
 
-
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  // THIS IS THE AJAX FOR ANSWERS
+// THIS IS THE AJAX FOR ANSWERS
   $('form#answer-form').on('submit', function( event ){
     event.preventDefault();
     var $form = $(this);
@@ -36,7 +34,25 @@ $(document).ready(function() {
       $form[0].reset();
       $('#answers-list').prepend(response);
     });// close AJAX request
-  }); // END OF ANSWER AJAX
+  });
+// END OF ANSWER AJAX
+
+// THIS IS THE AJAX FOR VOTING
+  $('.vote-form').on('submit', function( event ){
+    event.preventDefault();
+    var $form = $(this);
+    var voteData = $form.serialize();
+
+    $.ajax({
+      method: $form.attr('method'),
+      url: $form.attr('action'),
+      data: voteData
+    }).done( function( response ){
+      $form.parent().find(".vote-count").text("VoteCount: "+response);
+    });// close AJAX request
+  });
+// END OF AJAX FOR VOTING
+
 
   // AJAX FOR COMMENTS
   $('form#comment-form').on('submit', function( event ){
@@ -57,5 +73,6 @@ $(document).ready(function() {
       }
     }); // close AJAX request
   }); // END OF COMMENTS AJAX
+
 });// close on ready
 
