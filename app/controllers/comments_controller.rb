@@ -13,6 +13,7 @@ post '/questions/:question_id/comments' do
 end
 
 post '/questions/:question_id/answers/:answer_id/comments' do
+
   if logged_in?
     answer = Answer.find(params[:answer_id])
     comment = answer.comments.create(user_id: current_user.id, text: params[:comment])

@@ -49,6 +49,7 @@ post '/questions/:qid/comments/:cid/votes' do
 end
 
 post '/questions/:qid/answers/:aid/comments/:cid/votes' do
+
   if logged_in?
     Comment.find(params[:cid])
 
