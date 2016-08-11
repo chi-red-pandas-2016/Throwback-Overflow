@@ -10,7 +10,7 @@ post '/questions/:id/votes' do
   redirect back
 end
 
-post 'questions/:qid/answers/:aid/votes' do
+post '/questions/:qid/answers/:aid/votes' do
 
   # may need to refactor this -- only relying on answerIDs -- not using questions at all
   Answer.find(params[:aid]).votes.create(user_id: current_user.id, value: params[:vote].to_i)
