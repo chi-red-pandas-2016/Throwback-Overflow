@@ -1,6 +1,11 @@
 <div class="voting">
-  <form action="<%= vote_route %>" method="POST">
-    <input name="vote" type="submit" value="+1">
-    <input name="vote" type="submit" value="-1">
+  <form class="vote-form" action="<%= vote_route %>" method="POST">
+    <input type="hidden" name="vote" value="+1">
+    <input type="submit" value="+1">
   </form>
+  <form class="vote-form" action="<%= vote_route %>" method="POST">
+    <input type="hidden" name="vote" value="-1">
+    <input type="submit" value="-1">
+  </form>
+  <span class='vote-count'>VoteCount:<%= voteable.vote_total %></span>
 </div>

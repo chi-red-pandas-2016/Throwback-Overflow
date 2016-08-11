@@ -2,7 +2,7 @@
   <h2><%= question.title%></h2>
    <img src="<%= question.img_path %>" width=300>
     <p><%= question.body_text%></p>
-    <%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{question.id}/votes"}, layout: false %>
+    <%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{question.id}/votes", voteable: question}, layout: false %>
     <%= erb :'comments/_comment_form', locals: {comment_route: "/questions/#{question.id}/comments"}, layout: false %>
     <section>
     <%= erb :'comments/_comment', locals: {comments: question.comments}, layout: false %>

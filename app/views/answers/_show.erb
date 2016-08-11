@@ -17,5 +17,5 @@
     </form>
   <% end %>
 </ul>
-<%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{answer.question_id}/answers/#{answer.id}/votes"}, layout: false %>
+<%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{answer.question_id}/answers/#{answer.id}/votes", voteable: answer}, layout: false %>
   <%= erb :'comments/_comment_form', locals: {comment_route: "/questions/#{answer.question_id}/answers/#{answer.id}/comments"}, layout: false %>
