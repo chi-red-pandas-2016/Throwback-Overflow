@@ -1,7 +1,25 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+// Start of Question AJAX
+  $('.question-form').on("submit", function(event) {
+    event.preventDefault();
+
+    var form_data = $(this).serialize()
+
+    $.ajax({
+      url: $(this).attr('action'),
+      type: $(this).attr('method'),
+      data: form_data
+    })
+    .done(function(response) {
+      $(".question-wrapper").prepend(response);
+    })
+    .fail(function() {
+      console.log("error");
+    });
+  });
+// End of Question AJAX
+
+
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
   // THIS IS THE AJAX FOR ANSWERS
@@ -20,3 +38,4 @@ $(document).ready(function() {
     });// close AJAX request
   }); // END OF ANSWER AJAX
 });// close on ready
+
