@@ -130,6 +130,54 @@ question = Question.create(
   )
 question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
 
+question = Question.create(
+  title: "Can I get snapchat on this thing??!",
+  body_text: "",
+  user_id: 2,
+  img_path: "http://cdn.agilitycms.com/polaroid/MediaGroupings/1143/ONESTEP_600_00.jpg"
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+question = Question.create(
+  title: "Are these things worth anything now a days?",
+  body_text: "Only if there's a red panda one. RAWR",
+  user_id: 2,
+  img_path: "http://images.complex.com/complex/image/upload/c_limit,fl_progressive,q_80,w_680/pbatelspycol8d1vhie3.jpg"
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+question = Question.create(
+  title: "Can you use these worthless things for anything??",
+  body_text: "Nope but don't ever. EVER. throw them away.",
+  user_id: 2,
+  img_path: "http://vignette4.wikia.nocookie.net/crazybonespedia/images/c/c1/Welcumppl.png/revision/latest?cb=20120610122608"
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+question = Question.create(
+  title: "In Memoriam.",
+  body_text: "RIP",
+  user_id: 2,
+  img_path: "http://media.salon.com/2015/07/fredrogers-690x460-1.jpg"
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+question = Question.create(
+  title: "Which one would you be?",
+  body_text: "I personally would be Dimitri. Flying is dope.",
+  user_id: 2,
+  img_path: "http://images.mentalfloss.com/sites/default/files/styles/article_640x430/public/landhed.jpg"
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
+question = Question.create(
+  title: "Reward for lost keychain",
+  body_text: "I lost my pet and can't find him. Reward if found. $1 million thank yous.",
+  user_id: 2,
+  img_path: "https://s-media-cache-ak0.pinimg.com/564x/58/7e/b3/587eb3ded30a5ccfa5e9ce75a8488227.jpg"
+  )
+question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+
 ##################################################
 
 ######### Randomly Generated Questions ###########
