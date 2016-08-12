@@ -1,7 +1,8 @@
 <div class="question">
-<ul>
-  <img src="<%= question.img_path %>" width="250">
-  <h4><a href="/questions/<%=question.id%>"><%= question.title%></a></h4>
-</ul>
-
+  <div class="list-img-div">
+    <img class="list-img" src="<%= question.img_path %>">
+  </div>
+  <div class="list-title-div">
+    <a class="list-title" href="/questions/<%=question.id%>"><%= question.title%></a>
+  </div>
 </div>

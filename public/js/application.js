@@ -74,6 +74,7 @@ $(document).ready(function() {
     }); // close AJAX request
   }); // END OF COMMENTS AJAX
 
+
   // AJAX MARK AS BEST
 
     $('form#best-form').on('submit', function( event ){
@@ -90,6 +91,17 @@ $(document).ready(function() {
           $($form).closest('ul').find('li').addClass('best');
       });// close AJAX request
     });// End of AJAX for BEST
+
+//START SLIDING DOWN NEW QUESTION FORM
+
+  $(".question-form-wrapper").hide();
+
+  $(".add-a-throwback").on("click", function() {
+    $(".question-form-wrapper").slideToggle();
+  });
+
+//END SLIDING DOWN NEW QUESTION FORM
+
 
 });// close on ready
 
