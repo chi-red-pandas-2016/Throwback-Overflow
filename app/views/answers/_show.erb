@@ -1,7 +1,11 @@
-<ul id="answers-list">
-  <li><%= answer.text %></li>
+  <ul id="answers-list">
+    <% if answer.best %>
+     <li id="best"><%= answer.text %></li>
+    <% else %>
+      <li><%= answer.text %></li>
+    <% end %>
   <% if logged_in? && current_user.id == answer.question.user_id %>
-  <form action="<%= "/questions/#{answer.question_id}/answers/#{answer.id}" %>" method="POST">
+  <form id="best-form" action="<%= "/questions/#{answer.question_id}/answers/#{answer.id}" %>" method="POST">
     <input type="hidden" name="_method" value="put">
     <input type="submit" value="Mark as BEST">
   </form>
@@ -13,11 +17,11 @@
     </form>
   <% end %>
 </ul>
-<%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{answer.question_id}/answers/#{answer.id}/votes", voteable: answer}, layout: false %>
-  <%= erb :'comments/_comment_form', locals: {comment_route: "/questions/#{answer.question_id}/answers/#{answer.id}/comments"}, layout: false %>
-  <div class="answer-comments-list">
-    <% answer.comments.each do |comment| %>
-      <%= erb :'comments/_comment', locals: {comment: comment}, layout: false %>
-   <% end %>
-  </div>
+    <%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{answer.question_id}/answers/#{answer.id}/votes", voteable: answer}, layout: false %>
+    <%= erb :'comments/_comment_form', locals: {comment_route: "/questions/#{answer.question_id}/answers/#{answer.id}/comments"}, layout: false %>
+    <div class="answer-comments-list">
+      <% answer.comments.each do |comment| %>
+        <%= erb :'comments/_comment', locals: {comment: comment}, layout: false %>
+     <% end %>
+    </div>
 

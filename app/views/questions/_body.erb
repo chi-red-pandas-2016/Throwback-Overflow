@@ -1,7 +1,7 @@
 <article>
-  <h2><%= question.title%></h2>
+  <h1><%= question.title%></h1>
    <img src="<%= question.img_path %>" width=300>
-    <p><%= question.body_text%></p>
+    <h2><%= question.body_text%></h2>
     <%= erb :'votes/_vote_form', locals: {vote_route: "/questions/#{question.id}/votes", voteable: question}, layout: false %>
     <%= erb :'comments/_comment_form', locals: {comment_route: "/questions/#{question.id}/comments"}, layout: false %>
     <div class="question-comments-list">

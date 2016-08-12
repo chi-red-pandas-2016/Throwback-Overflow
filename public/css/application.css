@@ -46,7 +46,6 @@ nav ul li {
   background-color: #f6e4d6;
 }
 
-
 ul#question-list {
   display: inline-block;
   /*width: 25%;*/
@@ -141,14 +140,22 @@ div#voting {
   margin-left: 15px;
 }
 
+.answer-box {
+  border-bottom: 3px dotted black;
+  padding: 10px;
+  margin: 5px;
+ }
+
+
 .answers-wrapper {
   background-color: rgba(255,214,83, 0.8);
 }
 /*ul#answers-list {
   background-color: rgba(50,50,50,0.5);
 }*/
+
 ul#answers-wrapper {
-  background-color: rgba(50,50,50,0.5);
+  /*background-color: rgb(255,47,138);*/
 }
 /******VOTES****/
 div.voting form {
@@ -170,6 +177,11 @@ div.voting form {
 
 }
 
+
+#best{
+  background-color: rgb(33,176,174);
+}
+
 .add-a-throwback {
   text-align: center;
 }
@@ -186,4 +198,5 @@ div.voting form {
      /*border is optional*/
      border-bottom:1px solid #444;
      cursor: pointer;
+
 }
