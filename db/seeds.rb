@@ -2,47 +2,47 @@
 
 User.create(
   email: 'demo@',
-  hashed_password: "password")
+  password: "password")
 
 User.create(
   email: 'will.smith@90.com',
-  hashed_password: "password")
+  password: "password")
 
 User.create(
   email: 'jennifer.aniston@90.com',
-  hashed_password: "password")
+  password: "password")
 
 User.create(
   email: 'ronald.reagan@80.com',
-  hashed_password: "password")
+  password: "password")
 
 User.create(
   email: 'princess.diana@80.com',
-  hashed_password: "password")
+  password: "password")
 
 User.create(
   email: 'muhammad.ali@70.com',
-  hashed_password: "password")
+  password: "password")
 
 User.create(
   email: 'cher@70.com',
-  hashed_password: "password")
+  password: "password")
 
 User.create(
   email: 'john.lennon@60.com',
-  hashed_password: "password")
+  password: "password")
 
 User.create(
   email: 'elizabeth.taylor@60.com',
-  hashed_password: "password")
+  password: "password")
 
 User.create(
   email: 'elvis.presley@50.com',
-  hashed_password: "password")
+  password: "password")
 
 User.create(
   email: 'marilyn.monroe@50.com',
-  hashed_password: "password")
+  password: "password")
 
 users = User.all
 

@@ -15,7 +15,7 @@
   <ul>
     <li><a href="/">Home</a></li>
     <% if logged_in? %>
-    <li><a><%= current_user.email %></a></li>
+    <li><a href="/users"><%= current_user.email %></a></li>
     <li>
       <form action="/users/logout" method="POST">
         <input class="logout" type="submit" value="Log Out"/>

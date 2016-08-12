@@ -32,13 +32,13 @@ $(document).ready(function() {
       data: answerData
     }).done( function(response){
       $form[0].reset();
-      $('#answers-list').prepend(response);
+      $('form#answer-form').append (response);
     });// close AJAX request
   });
 // END OF ANSWER AJAX
 
 // THIS IS THE AJAX FOR VOTING
-  $('.vote-form').on('submit', function( event ){
+  $('#content').on('click', 'form.vote-form', function( event ){
     event.preventDefault();
     var $form = $(this);
     var voteData = $form.serialize();
@@ -52,7 +52,6 @@ $(document).ready(function() {
     });// close AJAX request
   });
 // END OF AJAX FOR VOTING
-
 
   // AJAX FOR COMMENTS
   $('form#comment-form').on('submit', function( event ){

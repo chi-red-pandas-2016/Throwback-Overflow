@@ -4,7 +4,7 @@
     <input id="downvote" name="vote" type="submit" value="-1">
 
   </form> -->
-  <form class="vote-form" action="<%= vote_route %>" method="POST">
+  <form id="vote-form" class="vote-form" action="<%= vote_route %>" method="POST">
     <input type="hidden" name="vote" value="+1">
     <input type="submit" id="upvote"value="+1">
   </form>
