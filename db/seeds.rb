@@ -134,17 +134,17 @@ question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
 
 ######### Randomly Generated Questions ###########
 
-100.times do
-question = Question.create(
-  title: Faker::Hacker.say_something_smart,
-  body_text: Faker::Hacker.say_something_smart,
-  user_id: users.sample.id,
-  img_path: ""
-  )
-question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
-end
+# 100.times do
+# question = Question.create(
+#   title: Faker::Hacker.say_something_smart,
+#   body_text: Faker::Hacker.say_something_smart,
+#   user_id: users.sample.id,
+#   img_path: ""
+#   )
+# question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
+# end
 
-questions = Question.all
+# questions = Question.all
 
 ##################################################
 

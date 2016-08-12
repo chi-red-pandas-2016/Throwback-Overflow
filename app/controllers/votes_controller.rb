@@ -3,11 +3,11 @@ post '/questions/:id/votes' do
     question = Question.find(params[:id])
 
     if existing = existing_vote(current_user.id, "Question", question.id)
-      
+
       if existing.value != params[:vote].to_i
         existing.update_attribute(:value, existing.value + params[:vote].to_i)
       end
-      
+
 
       if request.xhr?
         question.vote_total.to_s
@@ -23,7 +23,7 @@ post '/questions/:id/votes' do
       end
     end
   else
-     @errors << "You must be a member to comment"
+     @errors << "You must be a member to vote"
   end
 end
 
@@ -50,7 +50,7 @@ post '/questions/:qid/answers/:aid/votes' do
       end
     end
   else
-     @errors << "You must be a member to comment"
+     @errors << "You must be a member to vote"
   end
 
 end
@@ -77,13 +77,16 @@ post '/questions/:qid/comments/:cid/votes' do
       end
     end
   else
-     @errors << "You must be a member to comment"
+     @errors << "You must be a member to vote"
   end
 end
 
 post '/questions/:qid/answers/:aid/comments/:cid/votes' do
+
+  puts "hitting this route: /questions/:qid/answers/:aid/comments/:cid/votes"
   if logged_in?
-    Comment.find(params[:cid])
+
+    comment = Comment.find(params[:cid])
 
     if existing = existing_vote(current_user.id, "Comment", comment.id)
       if existing.value != params[:vote].to_i
@@ -103,6 +106,6 @@ post '/questions/:qid/answers/:aid/comments/:cid/votes' do
       end
     end
   else
-     @errors << "You must be a member to comment"
+     @errors << "You must be a member to vote"
   end
 end
