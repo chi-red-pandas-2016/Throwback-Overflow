@@ -85,9 +85,8 @@ $(document).ready(function() {
         url: $form.attr('action'),
         data: bestData
         }).done( function(response){
-          $('#answers-list li').removeClass('best');
-          console.log($($form).closest('ul').find('li'));
-          $($form).closest('ul').find('li').addClass('best');
+          $('#answers-list li').attr('id', ' ');;
+          $($form).parent().find('li').attr('id', 'best');
       });// close AJAX request
     });// End of AJAX for BEST
 

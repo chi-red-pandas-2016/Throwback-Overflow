@@ -132,7 +132,7 @@ question.votes.create(user_id: users.sample.id, value: [-1,1].sample)
 
 question = Question.create(
   title: "Can I get snapchat on this thing??!",
-  body_text: "",
+  body_text: "No phones aren't computers!",
   user_id: 2,
   img_path: "http://cdn.agilitycms.com/polaroid/MediaGroupings/1143/ONESTEP_600_00.jpg"
   )
