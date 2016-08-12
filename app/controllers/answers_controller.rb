@@ -39,9 +39,7 @@ put '/questions/:question_id/answers/:id' do
     @question.answers.each do |answer|
       answer.update_attribute(:best, false)
     end
-    puts @answer.text
-    @answer.update_attribute(:best, true)
-    puts @answer.best
+      @answer.update_attribute(:best, true)
   end
 
   erb :'questions/show'

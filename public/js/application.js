@@ -74,5 +74,22 @@ $(document).ready(function() {
     }); // close AJAX request
   }); // END OF COMMENTS AJAX
 
+  // AJAX MARK AS BEST
+
+    $('form#best-form').on('submit', function( event ){
+      event.preventDefault();
+      var $form = $(this);
+      var bestData = $form.serialize();
+      $.ajax({
+        method: "PUT",
+        url: $form.attr('action'),
+        data: bestData
+        }).done( function(response){
+          $('#answers-list li').removeClass('best');
+          console.log($($form).closest('ul').find('li'));
+          $($form).closest('ul').find('li').addClass('best');
+      });// close AJAX request
+    });// End of AJAX for BEST
+
 });// close on ready
 
